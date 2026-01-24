@@ -60,5 +60,32 @@ namespace GameDevUtils.Runtime.UI.Abstract
         }
 
         protected abstract void UpdateField();
+
+        protected float DeltaTime
+        {
+            get
+            {
+                if (updateMethod == EUpdateMethod.Update)
+                {
+                    return Time.deltaTime;
+                }
+                else if (updateMethod == EUpdateMethod.FixedUpdate)
+                {
+                    return Time.fixedDeltaTime;
+                }
+                else if (updateMethod == EUpdateMethod.InvokeRepeating)
+                {
+                    return invokeDelay;
+                }
+                else if (updateMethod == EUpdateMethod.Manual)
+                {
+                    return 0;
+                }
+                else
+                {
+                    throw new System.NotImplementedException();
+                }
+            }
+        }
     }
 }
