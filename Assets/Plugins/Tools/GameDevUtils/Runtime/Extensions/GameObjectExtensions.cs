@@ -19,5 +19,27 @@ namespace Plugins.GameDevUtils.Runtime.Extensions
             var newComponent = go.AddComponent<T>();
             return newComponent;
         }
+
+        public static T TryGetComponentAsParent<T>(this GameObject go) where T : Component
+        {
+            var component = go.GetComponent<T>();
+            if (!component)
+            {
+                component = go.GetComponentInChildren<T>();
+            }
+
+            return component;
+        }
+        
+        public static T TryGetComponentAsChild<T>(this GameObject go) where T : Component
+        {
+            var component = go.GetComponent<T>();
+            if (!component)
+            {
+                component = go.GetComponentInParent<T>();
+            }
+
+            return component;
+        }
     }
 }
