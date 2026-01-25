@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace GameDevUtils.Runtime.UI.Abstract
@@ -18,11 +19,30 @@ namespace GameDevUtils.Runtime.UI.Abstract
         private void Start()
         {
             OnStart();
+            
             TryStartAsync();
             
             UpdateField();
         }
 
+        void Update()
+        {
+            if (updateMethod != EUpdateMethod.Update)
+                return;
+            
+            UpdateField();
+            OnUpdate();
+        }
+        
+        void FixedUpdate()
+        {
+            if (updateMethod != EUpdateMethod.FixedUpdate)
+                return;
+            
+            UpdateField();
+            OnFixedUpdate();
+        }
+        
         void TryStartAsync()
         {
             if (updateMethod != EUpdateMethod.InvokeRepeating)
@@ -33,28 +53,29 @@ namespace GameDevUtils.Runtime.UI.Abstract
                 while (true)
                 {
                     await UniTask.Delay((int)(invokeDelay * 1000));
+                    
                     UpdateField();
+                    OnInvoke();
                 }
             });
         }
-
-        void Update()
-        {
-            if (updateMethod != EUpdateMethod.Update)
-                return;
-            
-            UpdateField();
-        }
-        
-        void FixedUpdate()
-        {
-            if (updateMethod != EUpdateMethod.FixedUpdate)
-                return;
-            
-            UpdateField();
-        }
         
         protected virtual void OnStart()
+        {
+            
+        }
+
+        protected virtual void OnUpdate()
+        {
+            
+        }
+
+        protected virtual void OnFixedUpdate()
+        {
+            
+        }
+
+        protected virtual void OnInvoke()
         {
             
         }

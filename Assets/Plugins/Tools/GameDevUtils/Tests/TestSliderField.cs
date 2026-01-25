@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Plugins.Tools.GameDevUtils.Tests
 {
-    public class TestSliderField : UDynamicSliderField
+    public class TestSliderField : UDoubleSliderField
     {
         [Space]
         [SerializeField] private float value;

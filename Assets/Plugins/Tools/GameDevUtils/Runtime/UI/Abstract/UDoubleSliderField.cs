@@ -8,16 +8,16 @@ namespace GameDevUtils.Runtime.UI.Abstract
     {
         [Space(5)] 
         [SerializeField] private Slider slider;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float mainSliderSpeed = 50f;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float mainSliderSpeedModOnUp = 1f;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float mainSliderSpeedModOnDown = 2f;
+        [SerializeField] private float mainSliderSpeed = 50f;
+        [SerializeField] private float mainSliderSpeedModOnUp = 1f;
+        [SerializeField] private float mainSliderSpeedModOnDown = 2f;
         
         [Space(2)]
-        [SerializeField, DrawIf("useDoubleSlider", true)] private Slider doubleSlider;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float doubleSliderDelay = 0.5f;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float doubleSliderSpeed = 75f;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float doubleSliderSpeedModOnUp = 1f;
-        [SerializeField, DrawIf("useDoubleSlider", true)] private float doubleSliderSpeedModOnDown = 2f;
+        [SerializeField] private Slider doubleSlider;
+        [SerializeField] private float doubleSliderDelay = 0.5f;
+        [SerializeField] private float doubleSliderSpeed = 75f;
+        [SerializeField] private float doubleSliderSpeedModOnUp = 1f;
+        [SerializeField] private float doubleSliderSpeedModOnDown = 2f;
         
         [Space(5)]
         [SerializeField] private TMP_Text label;
