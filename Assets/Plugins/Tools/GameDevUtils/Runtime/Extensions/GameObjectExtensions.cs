@@ -8,7 +8,7 @@ namespace Plugins.GameDevUtils.Runtime.Extensions
         {
             return GetOrAddComponent<T>(go.gameObject);
         }
-        
+
         public static T GetOrAddComponent<T>(this GameObject go) where T : Component
         {
             if (go.TryGetComponent(out T component))
@@ -19,8 +19,8 @@ namespace Plugins.GameDevUtils.Runtime.Extensions
             var newComponent = go.AddComponent<T>();
             return newComponent;
         }
-        
-        public static T TryGetComponentAsParent<T>(this GameObject go)
+
+        public static T GetComponentAsParent<T>(this GameObject go)
         {
             var component = go.GetComponent<T>();
             if (component == null)
@@ -31,7 +31,7 @@ namespace Plugins.GameDevUtils.Runtime.Extensions
             return component;
         }
         
-        public static T TryGetComponentAsChild<T>(this GameObject go)
+        public static T GetComponentAsChild<T>(this GameObject go)
         {
             var component = go.GetComponent<T>();
             if (component == null)
