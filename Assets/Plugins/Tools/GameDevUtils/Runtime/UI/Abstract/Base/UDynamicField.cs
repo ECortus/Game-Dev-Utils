@@ -1,5 +1,6 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
+using GameDevUtils.Runtime.Simultaneous;
 using UnityEngine;
 
 namespace GameDevUtils.Runtime.UI.Abstract
