@@ -16,7 +16,7 @@ namespace GameDevUtils.Runtime.Simultaneous
     [Serializable]
     public sealed class ActorInformation : IActorInformation
     {
-        [SerializeField] private string id = "id_default_actor";
+        [SerializeField, ReadOnly] private string id = "id_default_actor";
 
         [Space(5)] 
         [SerializeField] private string name = "Default Actor Name";

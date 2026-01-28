@@ -1378,7 +1378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: GameDevUtils.Tests::Plugins.Tools.GameDevUtils.Tests.TestSliderField
   updateMethod: 1
   invokeDelay: 1
-  useDoubleSlider: 1
   slider: {fileID: 1702393745}
   mainSliderSpeed: 50
   mainSliderSpeedModOnUp: 1
@@ -1664,6 +1663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b905aef6e1847f7b8c9d1055b1ebf1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GameDevUtils.Tests::Plugins.Tools.GameDevUtils.Tests.TestLoad
+  infoTest:
+    id: id_default_new_actor_name_test
+    name: Default New Actor Name Test
+    description: Default actor description about specific info.
+    icon: {fileID: 0}
   targetFrame: 30
   button: {fileID: 400075114}
 --- !u!1 &1882437515

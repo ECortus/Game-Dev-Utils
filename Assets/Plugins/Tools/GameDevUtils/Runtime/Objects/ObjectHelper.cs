@@ -12,21 +12,33 @@ namespace GameDevUtils.Runtime
             GameObject.DontDestroyOnLoad(obj);
         }
         
-        public static void Destroy(Object obj)
+        public static void Destroy(Object obj, bool silent = false)
         {
-            DebugHelper.Log("Destroying object: " + obj);
+            if (silent)
+            {
+                DebugHelper.Log("Destroying object: " + obj);
+            }
+            
             GameObject.Destroy(obj);
         }
         
-        public static void Destroy(Object obj, float time)
+        public static void Destroy(Object obj, float time, bool silent = false)
         {
-            DebugHelper.Log("Destroying object: " + obj + " in " + time + " seconds");
+            if (silent)
+            {
+                DebugHelper.Log("Destroying object: " + obj + " in " + time + " seconds");
+            }
+            
             GameObject.Destroy(obj, time);
         }
         
-        public static void DestroyImmediate(Object obj)
+        public static void DestroyImmediate(Object obj, bool silent = false)
         {
-            DebugHelper.Log("Immediate destroying object: " + obj);
+            if (silent)
+            {
+                DebugHelper.Log("Immediate destroying object: " + obj);
+            }
+            
             GameObject.DestroyImmediate(obj);
         }
     }
